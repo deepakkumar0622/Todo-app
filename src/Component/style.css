@@ -1,15 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 *{
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family:"Poppins", serif ;
     box-sizing: border-box;
+    
 } 
 
 /* container */
 .container{
     width: 100%;
     min-height: 100vh;
-    background: orange;
+    background: url("../image/pexels-content-pixie-1405717-2736499.jpg");
+    background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
     /* border: 2px solid green; */
     padding: 10px;
 }
@@ -17,16 +23,15 @@
 .todo-app{
     width: 100%;
     max-width: 540px;
-    background: white;
-    border: 2px solid black;
-    margin: 100px auto 20px;
+    background: transparent;
+    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.1);
     padding: 40px 30px 70px;
     border-radius: 15px;
 }
 
 .todo-app h2{
     display: flex;
-    color: blue;
+    color: black;
     align-items: center;
     margin-bottom: 20px;
     justify-content: center;
@@ -61,31 +66,59 @@ button{
     border: none;
     outline: none;
     padding: 16px 50px;
-    background: #ff5945;
+    background: linear-gradient(45deg, #ffd700, #ffc107);
     color: white;
     font-size: 16px;
     cursor: pointer;
     border-radius: 40px;
+    transition: background-color 0.3s, color 0.3s;
+}
+button:hover {
+  background-color: gray;
+  color: white;
 }
 
 /* styling on mid */
 .mid{
     display: flex;
-    font-size: 1.2rem;
-    margin-left: 20px;
-    margin-bottom: 30px;
-    /* justify-content: space-between; */
-
+    font-size: 15px;
+    margin-bottom:2px;
+    justify-content: space-between; 
 }
 
 #complete-all{
-    margin-left: 10px;
-    cursor: pointer;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+
+#complete-all i {
+  margin-right: 8px; /* Space between icon and text */
+}
+
+#complete-all:hover {
+  color: #388E3C; /* Darker green on hover */
+  transform: scale(1.1); /* Increase the size by 10% */
 }
 
 #clear-all{
-    margin-left: 90px;
-    cursor: pointer;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#clear-all i {
+  margin-right: 8px; /* Space between icon and text */
+}
+
+#clear-all:hover {
+  color: #ff0000; /* Darker green on hover */
+  transform: scale(1.1); /* Increase the size by 10% */
 }
 
 
@@ -95,6 +128,7 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    
     /* border: 1px solid #e5e5e5; */
 }
 
@@ -105,10 +139,11 @@ ul li {
     justify-content: space-between;
     align-items: inherit;
     align-items: center;
+    transition: transform 0.3s ease;
 }
 
   ul li:hover {
-    background: lightyellow;
+    transform: scale(1.1);
   }
   #list input {
     padding: 0;
@@ -117,20 +152,23 @@ ul li {
     margin-bottom: 0;
     display: none;
     cursor: pointer;
+    
   }
 
   
   #list label {
     position: relative;
     cursor: pointer;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
   }
   
   #list label:before {
     content:'';
     -webkit-appearance: none;
     background-color: transparent;
-    border: 2px solid #0079bf;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+    border: 2px solid white;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, border 0.3s ease;
     padding: 10px;
     display: inline-block;
     position: relative;
@@ -151,32 +189,30 @@ ul li {
     transform: rotate(45deg);
   }
   #list input:checked + label:before {
-    background: #0079bf;
+    background: #388E3C ;
+    border: #388E3C;
   } 
   #list input:checked + label {
+    color: red;
     text-decoration: line-through;
+    transition: text-decoration 0.3s ease;
   }
   .delete {
     height: 25px;
       padding: 5px 0px;
       border-radius: 3px;
+      cursor: pointer;
   }
-  .delete:hover {
-    background: #f2f2f2;
-    cursor: pointer;
-  }
+  
 
   .edit{
     height: 25px;
     padding: 5px 0px;
     border-radius: 3px;
     margin-right: 10px;
-  }
-
-  .edit:hover{
-    background: #f2f2f2;
     cursor: pointer;
   }
+
 
   h1 {
     text-align: center;
